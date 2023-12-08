@@ -26,4 +26,4 @@ jobs:
           mvn package
           docker build --tag benediktholst/pet-clinic:latest -f Dockerfile
           echo ${{ SWT2Test }} | docker login -u 'benediktholst' --password-stdin
-          docker push https://hub.docker.com/repository/docker/benediktholst/pet-clinic:latest
+          docker push benediktholst/pet-clinic:latest
