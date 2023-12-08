@@ -25,5 +25,6 @@ jobs:
         #### AUFGABE 3 COMPILE, DOCKER BUILD UND PUSH
           mvn package
           docker build --tag benediktholst/pet-clinic:latest -f Dockerfile .
-          docker login -u 'benediktholst' -p ${SWT2TEST}
+          echo ${{ SWT2TEST }} | docker login -u 'benediktholst' --password-stdin
+         
           docker push benediktholst/pet-clinic:latest
